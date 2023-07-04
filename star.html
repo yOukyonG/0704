@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+          // 별찍기 실습(1)
+          for(let i=0; i<5; i=i+1){
+            for(let j=0; j<=i; j=j+1){
+                document.write("*");
+            }
+            document.write("<br/>")
+        }
+
+        // 별찍기 (*5개씩)
+        for(let i=0; i<5; i=i+1){
+            document.write("*");
+            if(i%5 == 4){
+                document.write("<br />")
+            }
+        }
+
+        // 별찍기 실습(2)
+        for(let i=0; i<5; i=i+1){
+            for(let j=0; j<=i; j=j+1){
+                document.write("*"); //1,2,3,4
+            }
+            for(let j=0; j<=i; j=j-1){
+                document.write(" "); //
+            }
+            document.write("<br/>")
+        }
+    </script>
+</body>
+</html>

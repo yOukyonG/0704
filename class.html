@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let Person = class{
+            //생성자
+            constructor (name, score){
+                this.name = name;
+                this.score = score;
+            }
+            //출력하는 메서드
+            disp(){
+                console.log(this.name + ":" + this.score);
+            }
+            //getter
+            getName(){
+                return this.name;
+            }
+            //setter
+            setName(name){
+                this.name = name
+            }
+            getScore(){
+                return this.score;
+            }
+            // 유효성 검사
+            // 올바른 데이터인지 확인, 아니면 대입하지 않거나 바꿈.
+            setScore(score){
+                if(score<0 || score > 100){
+                    alert("적절하지 않는 점수")
+                    return;
+                }
+                this.score = score;
+            }
+        }
+
+        let obj = new Person ("공유경", 90);
+        obj.setScore(90) //setter의 역할 (유효성검사)
+        obj.disp()
+        
+    </script>
+</body>
+</html>

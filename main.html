@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let ar = [{name: 'adam', job: 'teacher'},
+                    {name: 'kong', job: 'student'}]
+        for (i in ar){
+            document.write(ar[i].name + "<br/>")
+            document.write(ar[i].job + "<br/>")
+            document.write(typeof(i))
+            document.write("<br/>")
+        }
+
+        let obj = {name : 'kong',
+                disp : function(){
+                    document.write(this.name  +"</br>")
+                } }
+        obj.disp()
+
+        let func = {date : '2023-07-04',
+                    content : 'LG 헬로비전',
+                    disp : function(){
+                        document.write(this.content +"</br>")
+                    }}
+        func.disp()
+
+        // 생성자를 사용하지 않을 경우, 함수 2번 작성 필요
+        let array = [
+            {name : "kong", disp : function(){document.write(this.name)}},
+             {name : "kim", disp : function(){document.write(this.name)}}]
+    
+        for (idx in array){
+            array[idx].disp()
+        }
+
+        // 생성자 함수 안에서 this를 사용했기 떄문에
+        // 메서드를 사용하지 않고, 속성만 설정해서 인스턴스 생성
+        // 생성자를 이용해서 인스턴스를 만들 떄는 new와 함께 호출해야함
+        // heap 공간에 인스턴스 생성
+        let person = function(name){
+            this.name = name
+            this.disp = function(){console.log(this.name)}
+        }
+        arr = [new person("kong"), new person("kim")]
+
+        for (idx in arr){
+            arr[idx].disp()
+        }
+
+        //클래스를 생성하고 인스턴스 생성
+        // 클래스 이름은 관습적으로 대문자로 시작
+        let Member = class { 
+            constructor (name){
+                this.name = name
+            }
+            // 클래스 안에 메서드를 만들 때, let 이나 function 생략 가능
+            disp() {console.log(this.name)}
+        }
+
+        ar = [new Member("한화이글스"), new Member("노시환")]
+        for (idx in ar){
+            ar[idx].disp()
+        }
+
+    </script>
+    
+</body>
+</html>
